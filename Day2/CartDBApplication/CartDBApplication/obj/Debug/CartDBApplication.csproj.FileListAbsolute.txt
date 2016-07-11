@@ -1,0 +1,10 @@
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\CartDBApplication.exe.config
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\CartDBApplication.exe
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\CartDBApplication.pdb
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\EntityFramework.dll
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\EntityFramework.SqlServer.dll
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\EntityFramework.xml
+E:\Проекты\CartDBApplication\CartDBApplication\bin\Debug\EntityFramework.SqlServer.xml
+E:\Проекты\CartDBApplication\CartDBApplication\obj\Debug\CartDBApplication.csprojResolveAssemblyReference.cache
+E:\Проекты\CartDBApplication\CartDBApplication\obj\Debug\CartDBApplication.exe
+E:\Проекты\CartDBApplication\CartDBApplication\obj\Debug\CartDBApplication.pdb
