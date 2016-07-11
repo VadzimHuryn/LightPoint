@@ -1,0 +1,8 @@
+E:\Проекты\DapperApplication\DapperApplication\bin\Debug\DapperApplication.exe.config
+E:\Проекты\DapperApplication\DapperApplication\bin\Debug\DapperApplication.exe
+E:\Проекты\DapperApplication\DapperApplication\bin\Debug\DapperApplication.pdb
+E:\Проекты\DapperApplication\DapperApplication\bin\Debug\Dapper.dll
+E:\Проекты\DapperApplication\DapperApplication\bin\Debug\Dapper.xml
+E:\Проекты\DapperApplication\DapperApplication\obj\Debug\DapperApplication.csprojResolveAssemblyReference.cache
+E:\Проекты\DapperApplication\DapperApplication\obj\Debug\DapperApplication.exe
+E:\Проекты\DapperApplication\DapperApplication\obj\Debug\DapperApplication.pdb
