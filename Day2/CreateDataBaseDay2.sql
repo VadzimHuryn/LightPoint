@@ -32,6 +32,10 @@ CREATE TABLE [dbo].[OrderItem] (
 
 
 --INSERT INTO [Cart] (CartName, CreateDate)
+--VALUES ('NameOne', GETDATE())
+--INSERT INTO [Cart] (CartName, CreateDate)
+--VALUES ('NameTwo', GETDATE())
+--INSERT INTO [Cart] (CartName, CreateDate)
 --VALUES ('NameFive', GETDATE())
 
 --SELECT * FROM [Cart]
