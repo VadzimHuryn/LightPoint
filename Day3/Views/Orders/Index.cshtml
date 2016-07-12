@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Day3Homework.Data.Order>
+@{
+    ViewBag.Title = "All Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table>
+    <tr>
+        <td><a asp-controller="OrderItems" asp-action="Index">[All OrderItems]</a></td>
+        <td><a asp-controller="Orders" asp-action="Create">[Add new Order]</a></td>
+    </tr>
+</table>
+<table class="table">
+    
+    <tr>
+        <td>Id</td>
+        <td>Order Name</td>
+        <td>Total Price</td>
+        <td></td>
+        <td></td>
+        
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.OrderName</td>
+            <td>@item.TotalPrice</td>
+            <td>
+                <a asp-controller="Orders" asp-action="Update" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+                <a asp-controller="Orders" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    
+    
+</table>
