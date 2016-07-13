@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3789FFBB-576C-496A-9C13-2F958C290989}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4E1CD38E-73C3-4930-996F-805C08B55DB6}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Day4WebApiCRUD", "src\Day4WebApiCRUD\Day4WebApiCRUD.xproj", "{B9F663DE-2B0C-42BD-8617-8774675BBE93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9F663DE-2B0C-42BD-8617-8774675BBE93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F663DE-2B0C-42BD-8617-8774675BBE93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F663DE-2B0C-42BD-8617-8774675BBE93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F663DE-2B0C-42BD-8617-8774675BBE93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B9F663DE-2B0C-42BD-8617-8774675BBE93} = {3789FFBB-576C-496A-9C13-2F958C290989}
+	EndGlobalSection
+EndGlobal
