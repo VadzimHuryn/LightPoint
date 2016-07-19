@@ -1,0 +1,65 @@
+﻿body{
+ background:linear-gradient(to right, red,orange);
+}
+.content{
+
+    width:600px;
+    height:700px;
+    margin:auto;
+    color:white;
+}
+.flex-container{
+    
+    display: flex;
+    height:50px;
+    flex-wrap:wrap;
+}
+
+.oneThird
+{
+    width:180px;
+    outline:1px solid white;
+    text-align:center;
+    margin:10px; 
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.oneHalf
+{
+    width:280px;
+    outline:1px solid white;
+    text-align:center; 
+    margin:10px;
+    padding-top:10px;
+    padding-bottom:10px; 
+}
+.oneFourth
+{
+    width:130px;
+    outline:1px solid white;
+    text-align:center; 
+    margin:10px; 
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+
+.oneSix
+{
+    width:80px;
+    outline:1px solid white;
+    text-align:center; 
+    margin:10px; 
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.TwoThirds
+{
+    width:380px;
+    outline:1px solid white;
+    text-align:center; 
+    margin:10px; 
+    padding-top:10px;
+    padding-bottom:10px;
+}
