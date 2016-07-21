@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" />
+</head>
+<body>
+    <div class="addItem">
+        <form name="tablename">
+            <table class="addItemTable">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input type="text" name="Description" /></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="text" name="Price" /></td>
+                </tr>
+                <tr>
+                    <td>Count</td>
+                    <td><input type="text" name="Count" /></td>
+                </tr>
+                <tr>
+                    <td><a href="HtmlPage.html"><input type="button" value="Добавить продукт" onclick="store.AddProduct(tablename);" /></a></td>
+                    <td><a href="HtmlPage.html"><input type="button" value="Отмена" /></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <script src="JavaScript.js"></script>
+</body>
+</html>

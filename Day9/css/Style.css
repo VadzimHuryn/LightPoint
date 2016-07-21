@@ -1,0 +1,71 @@
+﻿td.productTable{
+    background-color:gainsboro;
+    border:1px solid grey;
+    border-radius:3px 3px;
+}
+td.productTableDelete{
+    background-color:gainsboro;
+    border:1px solid grey;
+    width:30px;
+    border-radius:3px 3px;
+}
+td.productTableHead{
+    text-align:center;
+    background-color:gainsboro;
+    border:1px solid grey;
+    width:30px;
+
+}
+div.inputs
+{
+    width:300px;
+}
+input{
+    height:30px;
+    margin:5px;
+    float:right;
+    border-radius:5px 5px;
+}
+div.ininputs{
+    
+}
+div.tablediv{
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    background-color:darkgrey;
+    width:50%;
+}
+#table{
+    background-color:maroon;
+    width:100%;
+}
+div.addItem{
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+    background-color:darkgrey;
+    width:340px;
+    min-width:340px;
+    border-radius:5px 5px;
+}
+table.addItemTable{
+    width:auto;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+}
+div.divhead{
+    width:100%;
+    font-size:30pt;
+    background-color:maroon;
+    text-align:center;
+    color:white;
+    font-family:'Times New Roman';
+}

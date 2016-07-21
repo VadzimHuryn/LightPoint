@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/Style.css" />
+</head>
+<body>
+    <div class="addItem">
+        <form name="tablename">
+            <table class="addItemTable">
+                <tr>
+                    <td>ID</td>
+                    <td id="ID" ></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td id="Name"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td id="Description"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td id="Price"></td>
+                </tr>
+                <tr>
+                    <td>Count</td>
+                    <td id="Count"></td>
+                </tr>
+                <tr>
+                    <td><a href="HtmlPage.html"><input type="button" value="Обновить" onclick="store.UpdateItem(tablename);" /></a></td>
+                    <td><a href="HtmlPage.html"><input type="button" value="Отмена" /></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <script src="JavaScript.js"></script>
+    <script>
+        function param(Name) {
+            var Params = location.search.substring(1).split("&");
+            var variable = "";
+            for (var i = 0; i < Params.length; i++) {
+                if (Params[i].split("=")[0] == Name) {
+                    if (Params[i].split("=").length > 1)
+                        variable = Params[i].split("=")[1];
+                    return variable;
+                }
+            }
+            return "";
+        }
+        var select = param("ID");
+        store.AddToInput(select)
+    </script>
+</body>
+</html>
