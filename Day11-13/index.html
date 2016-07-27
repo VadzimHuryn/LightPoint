@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="Homework/Assets/css/bootstrap.css" />
+    <script src="Homework/Assets/js/angular.min.js" type="text/javascript"></script>
+    <script src="Homework/Assets/js/angular-resource.js"></script>
+    <script src="Homework/Assets/js/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="Homework/Controllers/ContactsController.js"></script>
+    <script src="Homework/Controllers/HomeworkController.js"></script>
+    <script src="Homework/Services/PersonsService.js"></script>
+    <script src="Homework/Filters/filterLastName.js"></script>
+    <script src="Homework/Assets/js/jquery.min.js"></script>
+    <script src="Homework/Assets/js/bootstrap.min.js"></script>
+   <script src="Homework/Assets/js/angular-messages.js"></script>
+</head>
+<body >
+    <div class="container-fluid">
+        
+        <div ng-controller="HomeworkController">
+            <h1>AngularJS Training. Homework 4</h1>
+            <hr />
+            <div class="alert alert-success" ng-hide="alertHide">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Update was successful!</strong>
+            </div>
+            <input type="text" ng-model="letter" placeholder="Enter text to filter person" />
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td><b>Last Name</b></td>
+                        <td><b>First Name</b></td>
+                        <td><b>Age</b></td>
+                        <td><b>City</b></td>
+                        <td>
+                            <b>
+                                <div class="btn-group open">
+                                    <button class="btn dropdown-toggle" ng-click="hide2=false" data-toggle="dropdown">{{selectHead}}<span class="caret"></span></button>
+                                    <ul class="dropdown-menu" ng-hide="hide2">
+                                        <li><a href="#" ng-click="phoneHide = false; faxHide = true; selectHead = selectPhone">{{selectPhone}}</a></li>
+                                        <li><a href="#" ng-click="phoneHide = true; faxHide =false; selectHead = selectFax">{{selectFax}}</a></li>
+                                    </ul>
+                                </div>
+                            </b>
+                        </td>
+                        <td><b>Actions</b></td>
+                    </tr>
+                </thead>
+                <tr ng-repeat="user in userarray | filterLastName:letter:selectHead">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.address.city}}</td>
+                    <td ng-hide="phoneHide">{{user.phoneNumber[0].number}}</td>
+                    <td ng-hide="faxHide">{{user.phoneNumber[1].number}}</td>
+                    <td>
+                        <div>
+                            <a href="#Editmodal" role="button" class="btn" data-toggle="modal" ng-click="editPerson(user.id)"><i class="icon-pencil"></i></a>
+                            <a href="#Deletemodal" role="button" class="btn" data-toggle="modal" ng-click="savePersonId(user.id)"><i class="icon-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            <a href="#Addmodal" role="button" class="btn btn-primary" data-toggle="modal" ng-click="clearAddPerson()"><i class="icon-plus icon-white"></i>Add Person</a>
+            
+              <form name="AddForm">
+                <div id="Addmodal" class="modal hide">
+                    <div class="modal-header">
+                        <h2>Add Person</h2>
+                    </div>
+                    <div class="modal-body" style="column-count:2">
+                        <b>First Name</b><br>
+                        <input type="text" ng-model="personFirstName" name="FirstName" ng-minlength="2" ng-maxlength="20" required ng-pattern="/[A-Za-zА-Яа-яЁё]/" />
+                        <div ng-messages="AddForm.FirstName.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="minlength">At least 2 letters</div>
+                            <div ng-message="maxlength">No more than 20 letters</div>
+                        </div>
+                        <b>Last Name</b><br />
+                        <input type="text" ng-model="personLastName" name="LastName" ng-minlength="2" ng-maxlength="20" required ng-pattern="/[A-Za-zА-Яа-яЁё]/" />
+                        <div ng-messages="AddForm.LastName.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="minlength">At least 2 letters</div>
+                            <div ng-message="maxlength">No more than 20 letters</div>
+                        </div>
+                        <b>Age *</b><br />
+                        <input type="text" ng-model="personAge" name="Age" ng-pattern="/^\d+$/" ng-maxlength="3" required /><br />
+                        <div ng-messages="AddForm.Age.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 3 digits</div>
+                        </div>
+                        <b>Street</b><br />
+                        <input type="text" ng-model="personStreetAddress" name="Street" ng-minlength="3" ng-maxlength="30" required /><br />
+                        <div ng-messages="AddForm.Street.$error" style="color:red" role="alert">
+                            <div ng-message="minlength">At least 3 letters</div>
+                            <div ng-message="maxlength">No more than 30 letters</div>
+                        </div>
+                        <b>City *</b><br />
+                        <input type="text" ng-model="personCity" name="City" ng-maxlength="20" required /><br />
+                        <div ng-messages="AddForm.City.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 20 letters</div>
+                        </div>
+                        <b>State</b><br />
+                       
+                        
+                        <!--<div class="btn-group open">
+                            <button class="btn dropdown-toggle"  data-toggle="dropdown">Города<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="state in personState"><button >{{state.full_name}}</button></li>
+                            </ul>  
+                        </div>-->
+                     
+                     
+
+                        <input type="text" ng-model="personState" name="State" ng-maxlength="50" required /><br />
+                        <div ng-messages="AddForm.State.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 50 letters</div>
+                        </div>
+                        <b>Postal Code</b><br />
+                        <input type="text" ng-model="personPostalCode" name="PostalCode" maxlength="6" ng-pattern="/^\d+$/" required /><br />
+                        <div ng-messages="AddForm.PostalCode.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 6 digits</div>
+                        </div>
+                        <b>Home Number</b><br />
+                        <input type="text" ng-model="homePhoneNumber" name="homePhoneNumber" ng-pattern="/\d+$|-+\d+$/" required /><br />
+                        <div ng-messages="AddForm.homePhoneNumber.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Please enter only digits</div>
+                        </div>
+                        <b>Fax Number</b><br />
+                        <input type="text" ng-model="faxPhoneNumber" name="faxPhoneNumber" ng-pattern="/\d+$|-+\d+$/" required /><br />
+                        <div ng-messages="AddForm.faxPhoneNumber.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Please enter only digits</div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" aria-hidden="true" class="btn" ng-click="clearAddPerson()">Cancel</button>
+                        <button type="button" data-dismiss="modal" aria-hidden="true" ng-click="addperson(); alertHide=false;" ng-disabled="AddForm.$invalid" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <form name="EditForm">
+                <div id="Editmodal" class="modal hide">
+                    <input type="hidden" ng-model="editPersonId" />
+                    <div class="modal-header">
+                        <h2>{{editPersonFirstName}} {{editPersonLastName}}</h2>
+                    </div>
+                    <div class="modal-body" style="column-count:2">
+                        <b>Age *</b><br />
+                        <input type="text" ng-model="editPersonAge" name="Age" ng-maxlength="3" ng-pattern="/^\d+$/" required placeholder="Please enter a number" /><br />
+                        <div ng-messages="EditForm.Age.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 3 digits</div>
+                        </div>
+                        <b>Street</b><br />
+                        <input type="text" ng-model="editPersonStreetAddress" name="Street" ng-minlength="3" ng-maxlength="30" required placeholder="Please enter a street" /><br />
+                        <div ng-messages="EditForm.Street.$error" style="color:red" role="alert">
+                            <div ng-message="minlength">At least 3 letters</div>
+                            <div ng-message="maxlength">No more than 30 letters</div>
+                        </div>
+                        <b>City *</b><br />
+                        <input type="text" ng-model="editPersonCity" name="City" ng-maxlength="20" required /><br />
+                        <div ng-messages="EditForm.City.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 20 letters</div>
+                        </div>
+                        <b>State</b><br />
+                        <input type="text" ng-model="editPersonState" name="State" ng-maxlength="20" required /><br />
+                        <div ng-messages="EditForm.State.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 20 letters</div>
+                        </div>
+                        <b>Postal Code</b><br />
+                        <input type="text" ng-model="editPersonPostalCode" name="PostalCode" maxlength="6" ng-pattern="/^\d+$/" required /><br />
+                        <div ng-messages="EditForm.PostalCode.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Uncorrect value</div>
+                            <div ng-message="maxlength">No more than 6 digits</div>
+                        </div>
+                        <b>Home Number</b><br />
+                        <input type="text" ng-model="editPersonHomePhoneNumber" name="homePhoneNumber" ng-pattern="/\d+$|-+\d+$/" required /><br />
+                        <div ng-messages="EditForm.homePhoneNumber.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Please enter only digits</div>
+                        </div>
+                        <b>Fax Number</b><br />
+                        <input type="text" ng-model="editPersonFaxPhoneNumber" name="faxPhoneNumber" ng-pattern="/\d+$|-+\d+$/" required /><br />
+                        <div ng-messages="EditForm.faxPhoneNumber.$error" style="color:red" role="alert">
+                            <div ng-message="pattern">Please enter only digits</div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" aria-hidden="true" class="btn">Cancel</button>
+                        <button type="button" data-dismiss="modal" aria-hidden="true" ng-disabled="EditForm.$invalid" ng-click="updatePerson(editPersonId); alertHide=false;" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+
+            </form>
+            <div id="Deletemodal" class="modal hide">
+                <div class="modal-header">
+                    <h2>Delete Person</h2>
+                </div>
+                <div class="modal-body">
+                    <p> Are you sure you want to remove <b>{{editPersonFirstName}} {{editPersonLastName}}</b> from the list?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="btn">Cancel</button>
+                    <button type="button" ng-click="deletePerson(deletePersonId);alertHide=false;" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="alert alert-info">
+            <h3>Work with ngRoute</h3>
+            <a href="#/contacts">Контакты</a>
+            <a href="#/persons">Главная</a>
+            
+            <ng-view></ng-view>
+        </div> 
+    </div>
+</body>
+</html>
