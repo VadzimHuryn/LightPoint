@@ -1,0 +1,4 @@
+Day15HomeworkXamarin.MainActivity, Day15HomeworkXamarin;md5f39092344dde839e4b4a977f8280a004.MainActivity
+Day15HomeworkXamarin.MainActivity, Day15HomeworkXamarin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5f39092344dde839e4b4a977f8280a004.MainActivity
+Day15HomeworkXamarin.MainActivity;md5f39092344dde839e4b4a977f8280a004.MainActivity
+day15homeworkxamarin.MainActivity;md5f39092344dde839e4b4a977f8280a004.MainActivity
