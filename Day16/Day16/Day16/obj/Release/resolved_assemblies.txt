@@ -1,0 +1,9 @@
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\Day16.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\Java.Interop.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\Mono.Android.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\mscorlib.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\System.Core.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\System.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\System.Xml.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\VADZIM\documents\visual studio 2015\Projects\Day16\Day16\obj\Release\android\assets\System.ServiceModel.Internals.dll

@@ -1,0 +1,8 @@
+Day16.MainActivity, Day16;md5c3a9c32e2e4080cf428273400a5ddd82.MainActivity
+Day16.MainActivity, Day16, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c3a9c32e2e4080cf428273400a5ddd82.MainActivity
+Day16.MainActivity;md5c3a9c32e2e4080cf428273400a5ddd82.MainActivity
+day16.MainActivity;md5c3a9c32e2e4080cf428273400a5ddd82.MainActivity
+Day16.MyAdapter, Day16;md5c3a9c32e2e4080cf428273400a5ddd82.MyAdapter
+Day16.MyAdapter, Day16, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c3a9c32e2e4080cf428273400a5ddd82.MyAdapter
+Day16.MyAdapter;md5c3a9c32e2e4080cf428273400a5ddd82.MyAdapter
+day16.MyAdapter;md5c3a9c32e2e4080cf428273400a5ddd82.MyAdapter
